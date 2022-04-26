@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+        <div class="alert alert-primary" role="alert">
+            로그인 정보를 입력하십시오.</div>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="login" class="btn btn-outline-primary">
+        </form>
+        <form action="" method="POST">
+            {% csrf_token%}
+            <input type="hidden" name="csrfmiddlewaretoken" value="Sxw1VX1joENDkE6BcLt3UIZhwwryZDtwtule0oPYU15qNm638hKe2A2dlOnJIUBh">
+            <!-- <input type="submit" value="회원가입" class="btn btn-outline-primary" > -->
+            <a href="{% url 'accounts:signup' %}">회원가입</a>
+        </form>
+    </div>
+
+    <div class="col"></div>
+</div>
+
+{% endblock %}
